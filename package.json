@@ -1,0 +1,42 @@
+{
+  "name": "restify-routes-start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "eslint": "node node_modules/eslint/bin/eslint.js lib/**",
+    "lcov-file": "node node_modules/nyc/bin/nyc.js report --reporter=lcov",
+    "coverage": "node node_modules/nyc/bin/nyc.js --check-coverage --lines 80 --functions 95 --reporter=html --reporter=text mocha && npm run lcov-file",
+    "bump": "npm test && npm version patch && git push && git push --tags",
+    "mocha": "node node_modules/mocha/bin/_mocha",
+    "test": "npm run coverage && npm run eslint",
+    "start": "node lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-a/restify-routes-start.git"
+  },
+  "author": "s-a",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s-a/restify-routes-start/issues"
+  },
+  "homepage": "https://github.com/s-a/restify-routes-start#readme",
+  "dependencies": {
+    "restify": "^6.3.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.12.1",
+    "nyc": "^11.0.2",
+    "pre-push": "^0.1.1",
+    "should": "^11.2.1",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0"
+  }
+}
