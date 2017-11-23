@@ -10,7 +10,8 @@
     "bump": "npm test && npm version patch && git push && git push --tags",
     "mocha": "node node_modules/mocha/bin/_mocha",
     "test": "npm run coverage && npm run eslint",
-    "start": "node lib/index.js"
+    "start": "node lib/index.js",
+    "dev": "node node_modules/nodemon/bin/nodemon.js ./lib"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
   },
   "homepage": "https://github.com/s-a/restify-routes-start#readme",
   "dependencies": {
-    "restify": "^6.3.4"
+    "restify": "^6.3.4",
+    "semver": "^5.4.1"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
