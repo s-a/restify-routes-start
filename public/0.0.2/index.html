@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>v2</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	    crossorigin="anonymous"></script>
 </head>
+
 <body>
-v2
+	check the devtools console
+	<script>
+		function getUrlJsonSync(url) {
+			var jqxhr = window.$.ajax({
+				type: 'GET',
+				url: url,
+				dataType: 'json',
+				cache: false,
+				async: false
+			})
+
+			// 'async' has to be 'false' for this to work
+			var response = {
+				valid: jqxhr.statusText,
+				data: jqxhr.responseJSON
+			}
+
+			return response.data
+		}
+
+		getUrlJsonSync('dictionary.de-DE.json')
+		getUrlJsonSync('dictionary.de-DE.json')
+		getUrlJsonSync('dictionary.de-DE.json')
+	</script>
 </body>
+
 </html>
